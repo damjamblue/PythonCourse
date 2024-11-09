@@ -1,0 +1,1 @@
+print("Da se presmeta vrednosta-7**2/(1-8)+7**3+4",(7**2/1-8)+7**3+4)
