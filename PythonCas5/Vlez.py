@@ -1,6 +1,6 @@
-# Vlez = input("Vnesete ja vasata omilena boja")
-#
-# print(Vlez)
+Vlez = input("Vnesete ja vasata omilena boja")
+
+print(Vlez)
 #
 # CelBroj = int(input("Vnesete cel broj"))
 # DecimalenBroj = float(input("Vnesete cel broj"))
@@ -27,13 +27,13 @@
 #
 # print("Perimetar:",stranaA+stranaB+stranaC)
 
-ime = input("Kako se vikas?")
-hobi = input("Koja e tvojata omilena hobi?")
-film = input("Koj e tvojot omilen film?")
-zivotno = input("Koe e tvoeto omileno zivotno?")
-oddelenie = int(input("Koe oddelenie si na ucilishte?"))
-
-print("Imeto na korisnikot e ", ime, "i toj e ucenik vo ", oddelenie,".Negovoto omileno zhivotno e", zivotno,"Omileno hobi", hobi, "a omilena kniga film e", film)
-
-
-
+# ime = input("Kako se vikas?")
+# hobi = input("Koja e tvojata omilena hobi?")
+# film = input("Koj e tvojot omilen film?")
+# zivotno = input("Koe e tvoeto omileno zivotno?")
+# oddelenie = int(input("Koe oddelenie si na ucilishte?"))
+#
+# print("Imeto na korisnikot e ", ime, "i toj e ucenik vo ", oddelenie,".Negovoto omileno zhivotno e", zivotno,"Omileno hobi", hobi, "a omilena kniga film e", film)
+#
+#
+#

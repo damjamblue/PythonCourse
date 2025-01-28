@@ -4,7 +4,7 @@ prashanje3 = input("Na kolku stepeni vrie vodata?")
 
 tochniOdgovori= 0
 
-if prashanje1.lower() == "treta" or 3:
+if prashanje1.lower() == "treta" or prashanje1 == 3:
     print("Tocen e odgovorot")
     tochniOdgovori=tochniOdgovori+1
 else:
