@@ -31,17 +31,22 @@ vtor_igrach.circle(40)
 vtor_igrach.penup()
 vtor_igrach.goto(-200,-100)
 
-
+#Kockata da ja pretstavime so site vrednosti koi moze da gi ima
 kocka = [1,2,3,4,5,6]
 
 #Nedopishano
 
 while True:
-    frlena_kocka = random.randint(kocka[0], kocka[len(kocka) - 1])
+    #frlena_kocka = random.randint(kocka[0], kocka[len(kocka) - 1])
+    #Naredbata random.choice kon koja predavame nekoja lista ni naogja sluchaen element
+    #od vrednostite na listata. Bidejki listata gi sodrzhi elementite 1,2,3,4,5,6
+    #random.choice sekogas ke ni dade vrednost od 1 do 6
+    frlena_kocka = random.choice(kocka)
     prv_igrach.forward(frlena_kocka)
 
-    frlena_kocka2 = random.randint(kocka[0], kocka[len(kocka) - 1])
-    vtor_igrach.forward(frlena_kocka2)
+    # frlena_kocka2 = random.randint(kocka[0], kocka[len(kocka) - 1])
+    frlena_kocka = random.choice(kocka)
+    vtor_igrach.forward(frlena_kocka)
 
     if (prv_igrach.xcor() >= 260):
         turtle.write('Prviot igrach e pobednik')
