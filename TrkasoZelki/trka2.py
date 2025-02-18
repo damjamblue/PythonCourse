@@ -47,12 +47,12 @@ kocka = [1,2,3,4,5,6]
 
 #Nacin 2 - so forward, treba samo da se dvizi napred kolku sto e kockata frlena
 for i in range(0,30):
-    input("Prv igrach moze da pritisne ENTER za da ja svrti kockata")
+    turtle.textinput("Prv IGRAC", "Prv igrach moze da pritisne ENTER za da ja svrti kockata")
     prv_igrach_vrednost = random.choice(kocka)
     print(prv_igrach_vrednost)
     prv_igrach.forward(prv_igrach_vrednost * dolzina_na_chekor)
 
-    input("Vtor igrach moze da pritisne ENTER za da ja svrti kockata")
+    turtle.textinput("Votr IGRAC", "Vroe igrach moze da pritisne ENTER za da ja svrti kockata")
     vtor_igrach_vrednost = random.choice(kocka)
     print(vtor_igrach_vrednost)
     vtor_igrach.forward(vtor_igrach_vrednost * dolzina_na_chekor)
