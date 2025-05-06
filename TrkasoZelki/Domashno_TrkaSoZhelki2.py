@@ -4,7 +4,11 @@ from turtle import * #site nejzini pod biblioteki
 import random
 
 dolzina_na_chekor = 30
-lista_na_prepreki = [-100, -50, 0, 50]
+prv_lista_na_prepreki = [-100, -50, 0, 50]
+prv_brojach_prepreki = [0, 0, 0, 0]
+
+vtor_lista_na_ubrzuvanja = [-100, -50, 0, 50]
+vtor_brojach_ubrzuvanja = [0,0,0,0]
 
 # Prva zhelka
 prv_igrach = Turtle() #turtle object e kreiran na prviot igrach
@@ -17,7 +21,7 @@ prv_igrach.goto(300, 60) # pozicija na krugot/celta
 prv_igrach.pendown()
 prv_igrach.circle(40)
 # Prechka
-for i in lista_na_prepreki:
+for i in prv_lista_na_prepreki:
     prv_igrach.penup()
     prv_igrach.goto(i, 70)
     prv_igrach.pendown()
@@ -43,18 +47,11 @@ vtor_igrach.goto(-200, 100)
 vtor_igrach.goto(300, -140)
 vtor_igrach.pendown()
 vtor_igrach.circle(40)
-for i in lista_na_prepreki:
+for i in vtor_lista_na_ubrzuvanja:
     vtor_igrach.penup()
-    vtor_igrach.goto(i, -130)
+    vtor_igrach.goto(i, -120)
     vtor_igrach.pendown()
-    vtor_igrach.forward(10)
-    vtor_igrach.left(90)
-    vtor_igrach.forward(60)
-    vtor_igrach.left(90)
-    vtor_igrach.forward(10)
-    vtor_igrach.left(90)
-    vtor_igrach.forward(60)
-    vtor_igrach.left(90)
+    vtor_igrach.circle(20)
 vtor_igrach.penup()
 vtor_igrach.goto(-200, -100)
 vtor_igrach.pendown()
@@ -70,7 +67,7 @@ tret_igrach.goto(-200, 100)
 tret_igrach.goto(300, -340)
 tret_igrach.pendown()
 tret_igrach.circle(40)
-for i in lista_na_prepreki:
+for i in prv_lista_na_prepreki:
     tret_igrach.penup()
     tret_igrach.goto(i, -330)
     tret_igrach.pendown()
@@ -87,7 +84,7 @@ tret_igrach.goto(-200, -300)
 tret_igrach.pendown()
 
 #Kockata da ja pretstavime so site vrednosti koi moze da gi ima
-kocka = [1,2,3,4,5,6]
+kocka = [1,2,3]
 prv_igrach_vrednost = 0
 vtor_igrach_vrednost = 0
 tret_igrach_vrednost = 0
@@ -97,7 +94,18 @@ for i in range(0, 30):
     turtle.textinput("Prv IGRAC", "Prv igrach moze da pritisne ENTER za da ja svrti kockata")#Go smenivme od konzola vo turtle window
     prv_igrach_vrednost = random.choice(kocka)
     print(prv_igrach_vrednost)
-    prv_igrach.forward(prv_igrach_vrednost * dolzina_na_chekor)
+
+    prv_igrach_pridvizuvanje = prv_igrach_vrednost * dolzina_na_chekor
+
+    # listata od prechki
+    for j in range(len(prv_lista_na_prepreki)):
+        if prv_igrach.xcor() >= prv_lista_na_prepreki[j] and prv_brojach_prepreki[j] == 0:
+            print("Prv igrach pridvizuvanje so usporuvanje", prv_igrach_pridvizuvanje / 2)
+            prv_igrach_pridvizuvanje = prv_igrach_pridvizuvanje / 2
+            prv_brojach_prepreki[j] = 1
+            break
+
+    prv_igrach.forward(prv_igrach_pridvizuvanje)
 
     if prv_igrach.xcor() > 260:
         prv_igrach.penup()
@@ -110,7 +118,19 @@ for i in range(0, 30):
     turtle.textinput("Vtor IGRAC", "Vtor igrach moze da pritisne ENTER za da ja svrti kockata")
     vtor_igrach_vrednost = random.choice(kocka)
     print(vtor_igrach_vrednost)
-    vtor_igrach.forward(vtor_igrach_vrednost * dolzina_na_chekor)
+
+    vtor_igrach_pridvizuvanje = vtor_igrach_vrednost * dolzina_na_chekor
+
+    # listata od ubrzuvanja
+    for j in range(len(vtor_lista_na_ubrzuvanja)):
+        if prv_igrach.xcor() >= vtor_lista_na_ubrzuvanja[j] and vtor_brojach_ubrzuvanja[j] == 0:
+            print("Vtor igrach pridvizuvanje so ubrzuvanje", prv_igrach_pridvizuvanje * 2)
+            prv_igrach_pridvizuvanje = prv_igrach_pridvizuvanje * 2
+            vtor_brojach_ubrzuvanja[j] = 1
+            break
+
+    vtor_igrach.forward(vtor_igrach_pridvizuvanje)
+
 
     if vtor_igrach.xcor() > 260:  #x sekogash e isto, visinata y e razlichna
         vtor_igrach.penup()
